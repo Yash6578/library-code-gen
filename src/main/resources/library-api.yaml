@@ -1,0 +1,43 @@
+openapi: 3.0.0
+
+info:
+  version: 0.0.1
+  title: Library Service
+  description: By using this service you can add and get book records
+
+tags:
+  - name: "Library"
+
+paths:
+  /library/books:
+    get:
+      tags:
+        - "Library"
+      operationId: getAllBooks
+      description: Get the all book records
+      summary: This is summary
+      responses:
+        200:
+          description: This means OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+components:
+  schemas:
+    Book:
+      description: This is book model
+      type: object
+      properties:
+        name:
+          description: name of book
+          type: string
+        authorName:
+          description: name of author
+          type: string
+
+
+
+
